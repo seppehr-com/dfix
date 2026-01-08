@@ -1,3 +1,14 @@
+---
+title: DFix - MusicXML Processor
+emoji: 🎵
+colorFrom: blue
+colorTo: purple
+sdk: gradio
+sdk_version: "4.44.0"
+app_file: app.py
+pinned: false
+---
+
 # DFix - MusicXML Processor
 
 A Python web application that replicates the functionality of the Electron-based Dorico Fixer. This tool processes MusicXML files to apply various fixes for better compatibility with Dorico music notation software.

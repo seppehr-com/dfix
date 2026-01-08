@@ -7,6 +7,19 @@ import tempfile
 import os
 import zipfile
 
+try:
+    import gradio_client.utils as _gc_utils
+    _orig_json_schema_to_python_type = getattr(_gc_utils, "json_schema_to_python_type", None)
+    if _orig_json_schema_to_python_type is not None:
+        def _safe_json_schema_to_python_type(schema, defs=None):
+            try:
+                return _orig_json_schema_to_python_type(schema, defs)
+            except TypeError:
+                return "Any"
+        _gc_utils.json_schema_to_python_type = _safe_json_schema_to_python_type
+except Exception:
+    pass
+
 from dorico_fixer import DoricoFixer
 
 # Load data

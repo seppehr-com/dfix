@@ -1,0 +1,127 @@
+{
+  "snare_drum": {
+    "display_name": "Snare Drum",
+    "names": ["Snare Drum", "Snare", "Snare Drum I"],
+    "id": 39
+  },
+  "ghost_snare_drum": {
+    "display_name": "Ghost Snare Drum",
+    "names": [
+      "Ghost Snare Drum",
+      "Snare Drum II",
+      "%ghost%snare%",
+      "%ghost%stroke%"
+    ],
+    "id": 39
+  },
+  "cross_stick": {
+    "display_name": "Cross Stick",
+    "names": [
+      "Cross Stick",
+      "Snare Drum III",
+      "%cross%stick%",
+      "%cross%stroke%"
+    ],
+    "id": 38
+  },
+  "bass_drum": {
+    "display_name": "Bass Drum",
+    "names": ["Kick Drum I", "Bass Drum", "%Bass%Drum%", "%Bass%"],
+    "id": 37
+  },
+  "normal_crash_cymbal": {
+    "display_name": "Normal Crash Cymbal",
+    "names": ["Crash Cymbal I", "Crash Cymbal", "%Crash%Cymbal%", "Crash"],
+    "id": 50
+  },
+  "choked_crash_cymbal": {
+    "display_name": "Choked Crash Cymbal",
+    "names": ["Crash Cymbal II", "%Choked%Crash%"],
+    "id": 50
+  },
+  "cowbell": {
+    "display_name": "Cowbell",
+    "names": ["Cowbell"],
+    "id": 57
+  },
+  "kick_drum": {
+    "display_name": "Kick Drum",
+    "names": ["Kick Drum II", "Kick Drum", "Double Bass"],
+    "id": 36
+  },
+  "hi_hat_open": {
+    "display_name": "Hi-hat Open",
+    "names": ["Hi-hat Open", "Hi-hat II", "%open%hi-hat%"],
+    "id": 47
+  },
+  "hi_hat_closed": {
+    "display_name": "Hi-hat Closed",
+    "names": ["Hi-hat Closed", "Hi-hat I", "%closed%hi-hat%"],
+    "id": 43
+  },
+  "hi_hat_pedal_closed": {
+    "display_name": "Hi-hat (pedal closed)",
+    "names": [
+      "Hi-hat (pedal closed)",
+      "Hi-hat (pedal)",
+      "%pedal%closed%hi-hat%",
+      "%pedal%hi-hat%"
+    ],
+    "id": 45
+  },
+  "hi_hat_pedal_splash": {
+    "display_name": "Hi-hat (pedal splash)",
+    "names": ["Hi-hat (pedal splash)", "%pedal%splash%hi-hat%"],
+    "id": 47
+  },
+  "china_cymbal": {
+    "display_name": "China Cymbal",
+    "names": ["China Cymbal", "%china%"],
+    "id": 53
+  },
+  "ride_cymbal": {
+    "display_name": "Ride Cymbal",
+    "names": ["Ride Cymbal", "%ride%cymbal%"],
+    "id": 52
+  },
+  "ride_bell": {
+    "display_name": "Ride Bell",
+    "names": ["Ride Bell", "%ride%bell%"],
+    "id": 54
+  },
+  "splash_cymbal": {
+    "display_name": "Splash Cymbal",
+    "names": ["Splash Cymbal", "%splash%cymbal%"],
+    "id": 56
+  },
+  "tom-tom-i": {
+    "display_name": "Tom-tom I",
+    "names": ["Tom-tom I", "%high%tom%"],
+    "id": 51
+  },
+  "tom-tom-ii": {
+    "display_name": "Tom-tom II",
+    "names": ["Tom-tom II", "%high%mid%tom%"],
+    "id": 49
+  },
+  "tom-tom-iii": {
+    "display_name": "Tom-tom III",
+    "names": ["Tom-tom III", "%mid%tom%"],
+    "id": 48
+  },
+  "tom-tom-iv": {
+    "display_name": "Tom-tom IV",
+    "names": ["Tom-tom IV", "%low%tom%"],
+    "id": 46
+  },
+  "floor_tom_i": {
+    "display_name": "Floor Tom I",
+    "names": ["Floor Tom I", "%floor%tom%", "%floor%tom%1%"],
+    "id": 44
+  },
+  "floor_tom_ii": {
+    "display_name": "Floor Tom II",
+    "names": ["Floor Tom II", "%floor%tom%2%", "%second%floor%tom%"],
+    "id": 42
+  }
+}

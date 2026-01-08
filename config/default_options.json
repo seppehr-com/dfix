@@ -1,0 +1,53 @@
+{
+  "p_clef": {
+    "display_name": "Fix the Clef",
+    "sign": "percussion",
+    "visibility": "no",
+    "run": true
+  },
+  "ghost_note": {
+    "display_name": "Fix the Ghost Note",
+    "run": true
+  },
+  "crash_notehead": {
+    "display_name": "Fix the Crash Notehead",
+    "notehead_type": "noteheadXOrnate",
+    "run": true
+  },
+  "hihat_notehead": {
+    "display_name": "Fix the Hi-hat Notehead",
+    "run": true
+  },
+  "word_to_rehearsal": {
+    "display_name": "Fix the Word to Rehearsal",
+    "run": true
+  },
+  "placement_change": {
+    "display_name": "Fix the Placement Change",
+    "run": true
+  },
+  "bpm_remover": { "display_name": "Fix the BPM Remover", "run": true },
+  "midi_fix": { "display_name": "Add a MIDI map", "run": true },
+  "beat_unit_changings_fix": {
+    "display_name": "Fix the Beat Unit Changings",
+    "run": true
+  },
+  "buzz_roll_fix": { "display_name": "Fix the Buzz Roll", "run": true },
+  "swing_marks_fix": { "display_name": "Fix the Swing Marks", "run": true },
+  "remove_single_multimeasure_rests": {
+    "display_name": "Remove Single Multi-measure Rests",
+    "run": true
+  },
+  "sticking_to_lyrics": {
+    "display_name": "Convert Sticking to Lyrics in Soundslice.",
+    "run": false
+  },
+  "tuplet_based_time_modification": {
+    "display_name": "Fix <time-modification> based on <tuplet> units and divisions",
+    "run": false
+  },
+  "remove_prevent_new_systems": {
+    "display_name": "Remove the Prevent New Systems",
+    "run": false
+  }
+}

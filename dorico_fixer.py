@@ -6,7 +6,8 @@ class DoricoFixer:
         self.log_text = ""
 
     def append_log(self, step_name, success, message=""):
-        status = "✓" if success else "✗"
+        status = "- "
+        status += "✓" if success else "✗"
         self.log_text += f"{status} {step_name}\n"
         if message:
             self.log_text += f"   {message}\n"
@@ -138,7 +139,7 @@ class DoricoFixer:
         print("DoricoFixer Log:\n" + self.log_text)
         # Format XML before returning
         fixed = self.prettify_xml(fixed)
-        return fixed, self.log_text
+        return fixed, f"{self.log_text} \n\n"
 
     def prettify_xml(self, xml_string):
         root = etree.fromstring(xml_string.encode('utf-8'))
@@ -293,6 +294,7 @@ class DoricoFixer:
     def bpm_remover(self, xml):
         # Remove BPM words
         xml = re.sub(r'<words[^>]*font-style=["\']normal["\'][^>]*font-weight=["\']bold["\'][^>]*>[^<]*bpm[^<]*<\/words>', '', xml, flags=re.IGNORECASE)
+        xml = re.sub(r'<words[^>]*font-style=["\']normal["\'][^>]*font-weight=["\']normal["\'][^>]*>[^<]*bpm[^<]*<\/words>', '', xml, flags=re.IGNORECASE)
         xml = re.sub(r'<words\s+font-family=["\']Arial["\']\s+font-size=["\']6["\']\s+valign=["\']top["\']>\s*=\s*<\/words>', '', xml, flags=re.IGNORECASE)
         return xml
 
@@ -304,6 +306,9 @@ class DoricoFixer:
             midi_device.getparent().remove(midi_device)
         for midi_instr in root.findall(".//midi-instrument"):
             midi_instr.getparent().remove(midi_instr)
+        #Remove The Instrument Sound
+        for instr_sound in root.findall(".//instrument-sound"):
+            instr_sound.getparent().remove(instr_sound)
 
         score_part = root.find(".//score-part")
         if score_part is None:

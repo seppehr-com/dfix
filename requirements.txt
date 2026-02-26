@@ -1,3 +1,4 @@
 gradio
 lxml
 huggingface_hub
+audioop

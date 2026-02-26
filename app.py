@@ -6,7 +6,19 @@ from io import BytesIO
 import tempfile
 import os
 import zipfile
-import time
+
+try:
+    import gradio_client.utils as _gc_utils
+    _orig_json_schema_to_python_type = getattr(_gc_utils, "json_schema_to_python_type", None)
+    if _orig_json_schema_to_python_type is not None:
+        def _safe_json_schema_to_python_type(schema, defs=None):
+            try:
+                return _orig_json_schema_to_python_type(schema, defs)
+            except TypeError:
+                return "Any"
+        _gc_utils.json_schema_to_python_type = _safe_json_schema_to_python_type
+except Exception:
+    pass
 
 from dorico_fixer import DoricoFixer
 
@@ -39,7 +51,6 @@ def process_file(files, selected_fixes):
         with open(file_path, 'r', encoding='utf-8') as f:
             xml_content = f.read()
         
-        fixer.log_text += f"\n**{os.path.basename(file_path)}:** \n"
         fixed_xml, _ = fixer.fix(xml_content, default_options.copy(), instrument_data, enabled_fixes)
         
         # Get original filename and create fixed name
@@ -62,13 +73,12 @@ def process_file(files, selected_fixes):
     # If multiple files, also create a zip
     output_files = temp_files
     if len(temp_files) > 1:
-        ltime=time.localtime()
-        zip_path = os.path.join(temp_dir, f'compressed_{ltime.tm_year}{ltime.tm_mon}{ltime.tm_mday}-{ltime.tm_hour}{ltime.tm_min}{ltime.tm_sec}_dfixed.zip')
+        zip_path = os.path.join(temp_dir, 'dfixed_files.zip')
         with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as zipf:
             for file_path in temp_files:
                 zipf.write(file_path, os.path.basename(file_path))
         output_files.append(zip_path)
-
+    
     return output_files, fixer.get_log_text()
 
 # Gradio Interface
@@ -95,10 +105,8 @@ with gr.Blocks(title="DFix - MusicXML Processor") as demo:
     
     download_output = gr.File(label="Download Fixed Files", file_count="multiple")
     
-    with gr.Accordion("Processing Log", open=False) as p_log:
-        # log_output = gr.Textbox(label="logs", lines=10)
-        # log_output = gr.Code(lines=10, language="markdown")
-        log_output = gr.Markdown(label="Log Out")
+    with gr.Accordion("Processing Log", open=False):
+        log_output = gr.Textbox(label="", lines=10)
 
     process_btn.click(
         fn=process_file,

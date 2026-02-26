@@ -1,3 +1,0 @@
-gradio==4.36.0
-lxml
-huggingface_hub==0.23.0

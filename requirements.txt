@@ -1,2 +1,4 @@
+gradio==4.44.0
 lxml
 huggingface_hub>=0.30
+pyaudioop

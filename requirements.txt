@@ -1,5 +1,2 @@
-gradio>=5.0.0
 lxml
 huggingface_hub==0.23.0
-uvicorn>=0.14.0
-websockets>=10.4

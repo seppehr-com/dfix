@@ -1,4 +1,15 @@
+import sys
 import json
+
+# Workaround for Python 3.13 - pydub needs audioop which was removed
+# Create a minimal shim to allow pydub to import
+if sys.version_info >= (3, 13):
+    import types
+    audioop_module = types.ModuleType('audioop')
+    # Add minimal stubs for audioop functions that pydub might call
+    audioop_module.error = Exception
+    sys.modules['audioop'] = audioop_module
+
 import gradio as gr
 from lxml import etree
 import re

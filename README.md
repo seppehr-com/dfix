@@ -61,8 +61,8 @@ The application can apply the following fixes to MusicXML files:
 
 ## Dependencies
 
-- gradio: For the web interface.
-- lxml: For XML parsing and manipulation.
+- gradio: For the web interface
+- lxml: For XML parsing and manipulation
 
 ## Original Project
 

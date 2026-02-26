@@ -1,2 +1,3 @@
 lxml
 huggingface_hub>=0.30
+pyaudioop
